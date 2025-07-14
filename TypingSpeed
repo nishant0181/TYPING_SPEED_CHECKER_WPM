@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class TypingSpeed {
+    public static void main(String[] args) {
+
+        System.out.println("WELCOME TO TYPING SPEED TESTER!");
+        System.out.println("Type this sentence as fast as you can :  \"Java is powerful and fun to learn.\" ");
+        System.out.println("ENTER WHEN YOU ARE READY");
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
+        long start = System.currentTimeMillis();
+        String userInput = sc.nextLine();
+        long end = System.currentTimeMillis();
+
+        int wordCount = userInput.split(" ").length;
+        long duration = end - start;
+
+        double timeTackenInsec = duration/1000;
+        double timeTackenInMIN = timeTackenInsec/60;
+        double wpm = wordCount / timeTackenInMIN;
+
+
+        System.out.println("YOU Typed.. " + wordCount + " Words");
+        System.out.println("YOUR WPM IS ...: " + wpm);
+    }
+}
